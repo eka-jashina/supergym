@@ -1,0 +1,125 @@
+.price {
+  background-color: $background-secondary-color;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-image:
+    image-set(
+      url("../../images/price-bg-decor-desktop@1x.webp") type("image/webp") 1x,
+      url("../../images/price-bg-decor-desktop@2x.webp") type("image/webp") 2x,
+      url("../../images/price-bg-decor-desktop@1x.png") type("image/png") 1x,
+      url("../../images/price-bg-decor-desktop@2x.png") type("image/png") 2x
+    );
+
+  @media (max-width: $tablet) {
+    background-image:
+      image-set(
+        url("../../images/price-bg-decor-tablet@1x.webp") type("image/webp") 1x,
+        url("../../images/price-bg-decor-tablet@2x.webp") type("image/webp") 2x,
+        url("../../images/price-bg-decor-tablet@1x.png") type("image/png") 1x,
+        url("../../images/price-bg-decor-tablet@2x.png") type("image/png") 2x
+      );
+  }
+
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
+}
+
+.price__title {
+  margin-bottom: 25px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 37px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 32px;
+  }
+}
+
+.price__time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 350px;
+  margin: 0 auto 38px;
+
+  border-bottom: 2px solid rgba(120, 120, 120, 0.2);
+
+  @media (max-width: $tablet) {
+    max-width: 310px;
+    gap: 43px;
+    margin-bottom: 45px;
+  }
+
+  @media (max-width: $mobile) {
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+.price__tab {
+  @include button-reset;
+
+  padding-bottom: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+
+  opacity: 0.5;
+
+  transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+    box-shadow: 0 2px 0 0 #787878;
+  }
+
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+    box-shadow: 0 2px 0 0 $dark-border-primary;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  @media (max-width: $tablet) {
+    padding-bottom: 6px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+.price__tab.active {
+  opacity: 1;
+  box-shadow: 0 2px 0 0 #d10a42;
+}
+
+.price__list {
+  @include list-reset;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+
+  animation: fade-effect 1s;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 35px;
+  }
+}

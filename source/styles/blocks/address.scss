@@ -1,0 +1,136 @@
+.address {
+  width: 683px;
+  margin-right: auto;
+  padding: 60px 0;
+
+  @media (max-width: $tablet) {
+    width: auto;
+    margin-right: 0;
+    padding-top: 60px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+    padding: 37px 0 41px;
+  }
+}
+
+.address__container {
+  max-width: 683px;
+
+  @media (max-width: $tablet) {
+    width: 440px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile) {
+    width: 320px;
+    padding: 0 15px;
+  }
+}
+
+.address__title {
+  margin-bottom: 40px;
+
+  text-align: left;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 35px;
+
+    font-size: 54px;
+    line-height: 54px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 37px;
+
+    font-size: 32px;
+    line-height: 32px;
+    text-align: left;
+  }
+}
+
+.address__list {
+  @include list-reset;
+
+  width: 100%;
+  column-count: 2;
+  column-rule: 1px solid #74819c;
+  column-gap: 120px;
+
+  @media (max-width: $tablet) {
+    column-gap: 60px;
+  }
+
+  @media (max-width: $mobile) {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+.address__item:nth-child(odd) {
+  margin-bottom: 15px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 0;
+  }
+}
+
+.address__item:not(:last-child) {
+  @media (max-width: $mobile) {
+    margin-bottom: 28px;
+  }
+}
+
+.address__name {
+  margin-bottom: 6px;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.address__description {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+
+  @media (max-width: $mobile) {
+    line-height: 20px;
+  }
+}
+
+.address__link {
+  @include link-reset;
+
+  transition: color 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+  &:hover {
+    color: rgba(28, 51, 116, 0.8);
+  }
+
+  &:focus-visible {
+    outline: 1px solid $dark-border-secondary;
+    outline-offset: 5px;
+  }
+
+  &:active {
+    color: #1c3374;
+  }
+
+  &:not([href]) {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}

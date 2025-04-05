@@ -1,0 +1,26 @@
+.footer {
+  padding: 40px 0;
+
+  color: $text-light-color;
+
+  background-color: #030a1a;
+
+  @media (max-width: $tablet) {
+    padding: 45px 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 40px 0;
+  }
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 30px;
+  }
+}

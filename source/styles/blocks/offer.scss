@@ -1,0 +1,148 @@
+.offer {
+  display: flex;
+  min-height: 174px;
+
+  @media (max-width: $tablet) {
+    min-height: 188px;
+  }
+
+  @media (max-width: $mobile) {
+    min-height: auto;
+
+    text-align: center;
+  }
+}
+
+.offer--accent {
+  background-color: $background-banner-color;
+  color: $text-light-color;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    margin: 0 -15px 10px;
+  }
+}
+
+.offer__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+
+  border: 7px solid;
+  border-image: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
+  border-image-slice: 1;
+
+  @media (max-width: $mobile) {
+    padding: 21px;
+    padding-bottom: 25px;
+  }
+}
+
+.offer__content--accent {
+  width: 50%;
+  padding: 40px 45px;
+
+  border: none;
+
+  @media (max-width: $tablet) {
+    width: 41%;
+    padding: 40px 25px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+    padding: 31px;
+    padding-bottom: 35px;
+  }
+}
+
+.offer h3 {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 700;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+.offer--accent h3 {
+  margin-bottom: 20px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 18px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 8px;
+  }
+}
+
+.offer p {
+  margin: 0;
+  margin-bottom: 8px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+.offer--accent p {
+  font-size: 18px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 29px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.offer--accent span {
+  margin-bottom: 40px;
+
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 700;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 28px;
+
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+.offer__link {
+  @include link-reset;
+  @include link-style;
+  @include link-effects-on-light-background;
+
+  align-self: flex-start;
+  margin-top: auto;
+
+  color: #1c3374;
+
+  @media (max-width: $mobile) {
+    align-self: center;
+  }
+}
+
+.offer--accent .offer__link {
+  @include link-effects-on-dark-background;
+
+  color: inherit;
+}
+
+.offer__img {
+  display: block;
+}

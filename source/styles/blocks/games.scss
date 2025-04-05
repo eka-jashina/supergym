@@ -1,0 +1,86 @@
+.games {
+  @media (max-width: $mobile) {
+    padding: 25px 0 30px;
+  }
+}
+
+.games__container {
+  display: flex;
+  background-clip: content-box;
+
+  background-color: $background-banner-color;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+}
+
+.games__content {
+  display: grid;
+  grid-template-areas: "title duration" "description description" "button button";
+  align-self: start;
+  gap: 30px 77px;
+  flex: 1;
+  padding: 60px 80px;
+
+  font-size: 18px;
+  color: $text-light-color;
+
+  @media (max-width: $tablet) {
+    padding: 40px;
+    gap: 9px 18px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 16px 55px;
+  }
+}
+
+.games__title {
+  grid-area: title;
+  padding-top: 0;
+  margin-bottom: 0;
+
+  font-size: 82px;
+  line-height: 96px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+
+  @media (max-width: $tablet) {
+    font-size: 48px;
+    line-height: 54px;
+  }
+}
+
+.games__description {
+  grid-area: description;
+  margin: 0;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 1px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 0;
+
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.games__button {
+  @include link-into-button;
+  @include button-effects-on-dark-background;
+
+  grid-area: button;
+
+  @media (max-width: $mobile) {
+    min-height: 60px;
+  }
+}
+
+.games__img {
+  display: block;
+  flex-shrink: 0;
+}

@@ -1,0 +1,126 @@
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 17px;
+  padding: 65px;
+  background-color: $background-main-color;
+  z-index: 1;
+
+  @media (max-width: $tablet) {
+    row-gap: 22px;
+  }
+
+  @media (max-width: $mobile) {
+    row-gap: 21px;
+    padding: 50px 42px;
+  }
+}
+
+.price-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 7px;
+  background: linear-gradient(148.82deg, #d10a42 0.85%, #00359f 100%);
+  mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#ffffff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.price-card:hover::before,
+.price-card:has(.price-card__button:focus-visible)::before {
+  opacity: 1;
+}
+
+.price-card__title {
+  margin: 0;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 700;
+
+  @media (max-width: $tablet) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+.price-card__description {
+  margin: 0;
+}
+
+.price-card__price {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 60px;
+  padding-right: 44px;
+  font-size: 60px;
+  line-height: 150%;
+  font-weight: 700;
+  color: $text-accent-color;
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: -20px;
+    z-index: -1;
+
+    font-size: 100px;
+    line-height: 150%;
+    font-weight: 700;
+    color: #e8e8e8;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 24px;
+
+    width: 30px;
+    height: 42px;
+
+    background-color: #102654;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-image: url("../../icons/rub-icon.svg");
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 39px;
+    padding-right: 34px;
+
+    font-size: 48px;
+
+    &::before {
+      top: -10px;
+      left: -15px;
+
+      font-size: 80px;
+    }
+
+    &::after {
+      bottom: 19px;
+      width: 24px;
+      height: 33px;
+    }
+  }
+}
+
+.price-card__button {
+  @include link-into-button;
+  @include button-effects-on-light-background;
+
+  border-color: $dark-border-primary;
+}
